@@ -1,0 +1,42 @@
+<h2>Busqueda por Pais</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!--Posteo deL Formulario, al hacer enter guardar la busqueda usamos el ngsubmit-->
+        <form (ngSubmit)="buscar()" autocomplete="off" action="">
+            <input type="text" class="form-control" name="termino" [(ngModel)]="termino" placeholder="Ingrese el País a Buscar...">
+        </form>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf="VariableError" class="alert alert-danger">
+    País "{{termino}}" no fue Encontrado
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr *ngFor="let element of info; let i=index">
+                    <th></th>
+                    <th>Bandera</th>
+                    <th>Nombre</th>
+                    <th>Poblacion</th>
+                    <th>...</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>bandera</td>
+                    <td>nombre</td>
+                    <td>122344</td>
+                    <td><a href="https://www.youtube.com/">YT</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
