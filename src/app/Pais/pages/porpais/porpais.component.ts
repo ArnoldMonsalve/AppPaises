@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { subscribeOn } from 'rxjs';
 import { PaisService } from '../../services/pais.service';
+import { Country } from '../../interfaces/pais';
 
 @Component({
   selector: 'app-porpais',
@@ -10,8 +11,8 @@ import { PaisService } from '../../services/pais.service';
 export class PorpaisComponent implements OnInit {
 
   termino:string= '';
-  info=[];
   VariableError:boolean=false;
+  paises: Country[]=[];
   constructor(private servicioPais: PaisService) { }
 
   buscar(){
@@ -20,8 +21,8 @@ export class PorpaisComponent implements OnInit {
     //subscribe para traer la data de la api en este caso para activar un observable
     this.servicioPais.buscarPais(this.termino).subscribe(
       (data)=>{
-      this.info=data;
-      console.log(this.info);
+      console.log(data)
+      this.paises=data;
     },(error)=>{
       this.VariableError=true;
       console.log('Error');

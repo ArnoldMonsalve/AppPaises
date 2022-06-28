@@ -6,6 +6,8 @@ import { PorcapitalComponent } from './pages/porcapital/porcapital.component';
 import { PorpaisComponent } from './pages/porpais/porpais.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { VerpaisComponent } from './pages/verpais/verpais.component';
+import { RouterModule } from '@angular/router';
+import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
 
 
 
@@ -15,7 +17,8 @@ import { VerpaisComponent } from './pages/verpais/verpais.component';
     PorcapitalComponent,
     PorpaisComponent,
     PorRegionComponent,
-    VerpaisComponent
+    VerpaisComponent,
+    PaisTablaComponent
   ],
     //se van a exportar todos los componentes que se usaran en el app.component(componente principal) y fuera del directorio padre(pais)
   exports:[
@@ -27,7 +30,8 @@ import { VerpaisComponent } from './pages/verpais/verpais.component';
   imports: [
     CommonModule,
     //permite poner el ngmodel
-    FormsModule
+    FormsModule,
+    RouterModule
   ]
 })
 export class PaisModule { }

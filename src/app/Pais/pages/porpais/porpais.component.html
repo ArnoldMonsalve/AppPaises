@@ -16,27 +16,8 @@
     País "{{termino}}" no fue Encontrado
 </div>
 
-<div class="row">
+<div *ngIf="!VariableError" class="row">
     <div class="col">
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr *ngFor="let element of info; let i=index">
-                    <th></th>
-                    <th>Bandera</th>
-                    <th>Nombre</th>
-                    <th>Poblacion</th>
-                    <th>...</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>bandera</td>
-                    <td>nombre</td>
-                    <td>122344</td>
-                    <td><a href="https://www.youtube.com/">YT</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </div>
 </div>
