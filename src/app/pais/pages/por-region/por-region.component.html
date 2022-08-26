@@ -1,0 +1,25 @@
+<h2 class="">Búsqueda por region: {{regionActivada | titlecase }}</h2>
+<hr>
+<br>
+<h4>Seleccione la Region</h4>
+
+<div class="row">
+    <div class="col">
+        <!-- se crea el for para recorrer la lista de regiones y con el click pasamos el valor de la region seleccionada, para recibirlo en el ts, y mostrarlo por interpolación  -->
+
+        <!-- [class."lo que deseamos asignar"] de esta manera cuando se cumpla la condición se le asignara la clase active al botón para hacer el efecto visual de seleccionado-->
+
+        <button class="btn btn-outline-dark mr-1 my-1" [class.active]="region.nombre===regionActivada" *ngFor="let region of regiones" (click)="activarRegion(region.nombre);recibirSiglas(region.siglas)">
+          {{region.siglas}}
+        </button>
+    </div>
+</div>
+<hr class="my-3">
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+
+
+    </div>
+</div>
