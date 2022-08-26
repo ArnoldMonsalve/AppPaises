@@ -26,7 +26,7 @@ export class PaisService {
   }
 
   buscarRegion( termino: string ): Observable<Country[]> {
-    //los headers optimizan la búsqueda pidiéndole que traigas solo ciertos campos del servicio y el subscribe sea mas optimo en este caso aplicado a una api, asi se llaman de forma local
+    //los headers optimizan la búsqueda pidiéndole que traigas solo ciertos campos del servicio y el subscribe sea mas optimo en este caso aplicado a una api, asi se llaman de forma local revisarlo para aplicar en la migración
     const headers = new  HttpHeaders()
     .set( 'fields', 'name,capital,alpha2code,flag,population' );
 
